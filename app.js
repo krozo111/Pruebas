@@ -1,9 +1,51 @@
 
-console.log("hola");
+//alert("hola");
 
-alert("alerta mensaje en js");
+class Animal {
+    constructor(especie, edad,color){
+        this.especie = especie;
+        this.edad = edad;
+        this.color = color;
+        this.info = `Soy ${this.especie}, tengo ${this.edad} años 
+        y soy de color ${this.color}`;
+    }
+    verInfo(){
+        document.write(this.info + "<br>")
+    }
+    
 
- var msg = "hola perras";
- console.log (msg);
+}
 
- 
+class Perro extends Animal{
+    constructor(especie,edad,color,raza){
+        super(especie,edad,color);
+        this.raza = null;
+    }
+    set setRaza(newName){;
+         this.raza = newName;
+        //document.write("gguau <br>");
+    }
+    
+    get getRaza(){
+        return this.raza;
+    }
+}
+
+
+const perro = new Perro("perro",5,"marron","doberman")
+const gato = new Animal("gato",2,"rojo")
+const pajaro = new Animal("pajaro",1,"azul")
+
+perro.setRaza = "pastor";
+
+document.write(perro.getRaza + "<br>")
+
+
+//document.write(pajaro.info +  "espacios <br>");
+//document.write(gato.info +  "<br>");
+//document.write(pajaro.info +  "<br>");
+
+perro.verInfo();
+gato.verInfo();
+pajaro.verInfo();
+
